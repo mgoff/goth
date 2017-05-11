@@ -40,6 +40,7 @@ import (
 	"github.com/markbates/goth/providers/paypal"
 	"github.com/markbates/goth/providers/salesforce"
 	"github.com/markbates/goth/providers/slack"
+	"github.com/markbates/goth/providers/smartthings"
 	"github.com/markbates/goth/providers/soundcloud"
 	"github.com/markbates/goth/providers/spotify"
 	"github.com/markbates/goth/providers/steam"
@@ -108,6 +109,7 @@ func main() {
 		deezer.New(os.Getenv("DEEZER_KEY"), os.Getenv("DEEZER_SECRET"), "http://localhost:3000/auth/deezer/callback", "email"),
 		discord.New(os.Getenv("DISCORD_KEY"), os.Getenv("DISCORD_SECRET"), "http://localhost:3000/auth/discord/callback", discord.ScopeIdentify, discord.ScopeEmail),
 		meetup.New(os.Getenv("MEETUP_KEY"), os.Getenv("MEETUP_SECRET"), "http://localhost:3000/auth/meetup/callback"),
+		smartthings.New(os.Getenv("SMARTTHINGS_KEY"), os.Getenv("SMARTTHINGS_SECRET"), "http://localhost:3000/auth/smartthings/callback"),
 
 		//Auth0 allocates domain per customer, a domain must be provided for auth0 to work
 		auth0.New(os.Getenv("AUTH0_KEY"), os.Getenv("AUTH0_SECRET"), "http://localhost:3000/auth/auth0/callback", os.Getenv("AUTH0_DOMAIN")),
@@ -154,6 +156,7 @@ func main() {
 	m["twitter"] = "Twitter"
 	m["salesforce"] = "Salesforce"
 	m["slack"] = "Slack"
+	m["smartthings"] = "SmartThings"
 	m["meetup"] = "Meetup.com"
 	m["auth0"] = "Auth0"
 	m["openid-connect"] = "OpenID Connect"

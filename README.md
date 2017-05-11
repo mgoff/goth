@@ -43,6 +43,7 @@ $ go get github.com/markbates/goth
 * Paypal
 * SalesForce
 * Slack
+* SmartThings
 * Soundcloud
 * Spotify
 * Steam

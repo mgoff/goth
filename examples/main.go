@@ -35,6 +35,7 @@ import (
 	"github.com/markbates/goth/providers/lastfm"
 	"github.com/markbates/goth/providers/linkedin"
 	"github.com/markbates/goth/providers/meetup"
+	"github.com/markbates/goth/providers/nest"
 	"github.com/markbates/goth/providers/onedrive"
 	"github.com/markbates/goth/providers/openidConnect"
 	"github.com/markbates/goth/providers/paypal"
@@ -110,6 +111,7 @@ func main() {
 		discord.New(os.Getenv("DISCORD_KEY"), os.Getenv("DISCORD_SECRET"), "http://localhost:3000/auth/discord/callback", discord.ScopeIdentify, discord.ScopeEmail),
 		meetup.New(os.Getenv("MEETUP_KEY"), os.Getenv("MEETUP_SECRET"), "http://localhost:3000/auth/meetup/callback"),
 		smartthings.New(os.Getenv("SMARTTHINGS_KEY"), os.Getenv("SMARTTHINGS_SECRET"), "http://localhost:3000/auth/smartthings/callback"),
+		nest.New(os.Getenv("NEST_KEY"), os.Getenv("NEST_SECRET"), "http://localhost:3000/auth/nest/callback"),
 
 		//Auth0 allocates domain per customer, a domain must be provided for auth0 to work
 		auth0.New(os.Getenv("AUTH0_KEY"), os.Getenv("AUTH0_SECRET"), "http://localhost:3000/auth/auth0/callback", os.Getenv("AUTH0_DOMAIN")),
@@ -157,6 +159,7 @@ func main() {
 	m["salesforce"] = "Salesforce"
 	m["slack"] = "Slack"
 	m["smartthings"] = "SmartThings"
+	m["nest"] = "Nest"
 	m["meetup"] = "Meetup.com"
 	m["auth0"] = "Auth0"
 	m["openid-connect"] = "OpenID Connect"
